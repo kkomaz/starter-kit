@@ -1,11 +1,16 @@
-App = Ember.Application.create();
-
-App.Router.map(function() {
-  // put your routes here
+var App = Ember.Application.create({
+  LOG_TRANSITIONS: true
 });
 
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
+App.Router.map(function(){
+  this.route('about', {path: '/aboutus'});
 });
+
+// App.ApplicationController = Ember.Controller.extender({
+
+// });
+
+// App.ApplicationView = Ember.view.extend({
+//   templateName : 'application',
+//   name: 'outlet'
+// });
