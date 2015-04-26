@@ -1,16 +1,14 @@
 var App = Ember.Application.create({
   LOG_TRANSITIONS: true
 });
-
-App.Router.map(function(){
-  this.route('about', {path: '/aboutus'});
+App.Router.map(function() {
+  this.route('credits', { path: '/thanks' });
+  this.route('about');
 });
 
-// App.ApplicationController = Ember.Controller.extender({
-
-// });
-
-// App.ApplicationView = Ember.view.extend({
-//   templateName : 'application',
-//   name: 'outlet'
-// });
+App.IndexController = Ember.Controller.extend({
+  productsCount: 6,
+  logo: 'images/logo-small.png',
+  time: function(){
+    return (new Date()).toDateString();}.property()
+});
