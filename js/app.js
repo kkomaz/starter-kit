@@ -5,10 +5,18 @@ App.Router.map(function() {
   this.route('credits', { path: '/thanks' });
   this.route('about');
 });
-
 App.IndexController = Ember.Controller.extend({
   productsCount: 6,
   logo: 'images/logo-small.png',
-  time: function(){
-    return (new Date()).toDateString();}.property()
+  time: function() {
+    return (new Date()).toDateString();
+  }.property()
+});
+
+App.AboutController = Ember.Controller.extend({
+  contactName: "Alex",
+  avatar: 'images/avatar.png',
+  open: function(){
+    return ((new Date()).getDay() === 0) ? "Closed" : "Open";
+  }.property()
 });
