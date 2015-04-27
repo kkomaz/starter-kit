@@ -50,6 +50,19 @@
         {{/link-to}}
       </p>
     </div>
+    <div class='row'>
+      {{#each onSale}}
+        <div class="col-sm-4">
+          <img {{bind-attr src='image'}} class='img-thumbnail col-sm-5' />
+          <div class="col-sm-7">
+            <h2>{{title}}</h2>
+            <p class="product-description">{{description}}</p>
+            <p>{{#link-to 'product' this class='btn btn-success'}}
+              Buy for ${{price}}{{/link-to}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
     <p class='pull-right text-muted'>Rendered on {{time}}</p>
   </script>
   <script type='text/x-handlebars' data-template-name='contacts/index'>
@@ -106,6 +119,11 @@
   </script>
   <script type='text/x-handlebars' data-template-name='products/index'>
     <p class='text-muted'>Choose a product from those on the left!</p>
+    {{#each deals}}
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>{{#link-to 'product' this}} Buy for ${{price}}{{/link-to}}</p>
+    {{/each}}
   </script>
   <script type="text/x-handlebars" data-template-name='contacts'>
     <div class='row'>
