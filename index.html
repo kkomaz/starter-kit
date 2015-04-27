@@ -11,6 +11,9 @@
   <script src='js/handlebars.js'></script>
   <script src='js/ember.js'></script>
   <script src='js/ember-data.js'></script>
+  <script src='js/jquery-1.10.2.js'></script>
+  <script src='js/ember-1.11.0.js'></script>
+  <script src='js/ember-template-compiler-1.11.0.js'></script>
   <script src='js/app.js'></script>
 </head>
 <body>
@@ -47,7 +50,7 @@
         {{/link-to}}
       </p>
     </div>
-    <p class='pull-right text-muted'>Rendered on {{time}}</p> 
+    <p class='pull-right text-muted'>Rendered on {{time}}</p>
   </script>
   <script type='text/x-handlebars' data-template-name='contacts/index'>
     <div class='row'>
@@ -97,7 +100,7 @@
   <script type='text/x-handlebars' data-template-name='contacts'>
     <div class='row'>
       <div class='col-sm-9'>
-        
+        {{outlet}}
       </div>
       <div class='col-sm-3'>
         <div class='list-group'>
@@ -107,9 +110,6 @@
             {{/link-to}}
           {{/each}}
         </div>
-      </div>
-      <div class='col-sm-9'>
-        {{outlet}}
       </div>
     </div>
   </script>
